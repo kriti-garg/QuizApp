@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 class genres(models.Model):
     content = models.TextField();
@@ -10,8 +11,8 @@ class subgenre(models.Model):
 class users(models.Model):
     name = models.TextField()
     email = models.EmailField()
-    password_digest = models.TextField()
-    remember_digest = models.TextField()
+    password_digest = forms.CharField(max_length=32, widget=forms.PasswordInput)
+    remember_digest = forms.CharField(max_length=32, widget=forms.PasswordInput)
     admin = models.BooleanField(default=0)
 
 class leaderboards(models.Model):
