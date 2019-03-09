@@ -11,8 +11,7 @@ class subgenre(models.Model):
 class users(models.Model):
     name = models.TextField()
     email = models.EmailField()
-    password_digest = forms.CharField(max_length=32, widget=forms.PasswordInput)
-    remember_digest = forms.CharField(max_length=32, widget=forms.PasswordInput)
+    password_digest = models.CharField(max_length=32)
     admin = models.BooleanField(default=0)
 
 class leaderboards(models.Model):
